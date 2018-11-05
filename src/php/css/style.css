@@ -1,0 +1,91 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color: #114a4a;
+}
+
+h1 {
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #fefdff;
+}
+
+h2 {
+    font-size:1em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+}
+
+h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+}
+
+h4 {
+    font-size:0.2em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+}
+
+
+
+.table th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+}
+
+.table td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.table {
+    text-align: left;
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+
+.table td, .table th {
+    padding: 0.2em 1em ;
+}
+
+/* Background-color of the odd rows */
+.table tr:nth-child(odd) {
+    background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.table tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.table th {
+    background-color: #1F2739;
+}
+
+.table td:first-child { color: #FB667A; }
+.table td:first-child a { color: #FB667A; }
