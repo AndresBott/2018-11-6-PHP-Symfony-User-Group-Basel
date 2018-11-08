@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     # mount project src code
     # will be bind mounted in the guest later on
     config.vm.synced_folder "../../src/", "/host_project", owner: "phpuser1", group: "phpuser1", :mount_options => ["uid=1100,gid=1100"]
-    config.vm.synced_folder "../../src/php", "/host_project_user2", owner: "phpuser2", group: "phpuser2", :mount_options => ["uid=1101,gid=1101"]
+    # config.vm.synced_folder "../../src/php", "/host_project_user2", owner: "phpuser2", group: "phpuser2", :mount_options => ["uid=1101,gid=1101"]
 
 
     # Disable the new default behavior introduced in Vagrant 1.7, to

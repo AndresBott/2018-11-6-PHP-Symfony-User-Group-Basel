@@ -23,30 +23,40 @@ sudo mkdir -p /vhosts
 #=============================================================================================================
 USER="phpuser1"
 sudo id -u $USER &>/dev/null || useradd -d /vhosts -u 1100 $USER
-sudo mkdir -p /vhosts/$USER/public_html
+sudo usermod -a -G $USER www-data
+sudo mkdir -p /vhosts/$USER/
+# clean up if provisioned again
+if [ -d "/vhosts/$USER/public_html/" ]; then
+    rm -R /vhosts/$USER/public_html/
+fi
+sudo cp -R /host_project/php/ /vhosts/$USER/public_html/
+
 sudo chown -R $USER:$USER /vhosts/$USER/
 sudo chmod -R 750 /vhosts/$USER/
 
-sudo usermod -a -G $USER www-data
 
-BINDMOUNT="/host_project/php/ /vhosts/$USER/public_html/ none defaults,bind 0 0"
-sudo grep -q -F "$BINDMOUNT" /etc/fstab || echo "$BINDMOUNT" >> /etc/fstab
-sudo mount -a
 
 #=============================================================================================================
 # Create phpuser2
 #=============================================================================================================
 USER="phpuser2"
 sudo id -u $USER &>/dev/null || useradd -d /vhosts -u 1101 $USER
-sudo mkdir -p /vhosts/$USER/public_html
+sudo usermod -a -G $USER www-data
+sudo mkdir -p /vhosts/$USER/
+# clean up if provisioned again
+if [ -d "/vhosts/$USER/public_html/" ]; then
+    rm -R /vhosts/$USER/public_html/
+fi
+sudo cp -R /host_project/php/ /vhosts/$USER/public_html/
+
 sudo chown -R $USER:$USER /vhosts/$USER/
 sudo chmod -R 750 /vhosts/$USER/
 
-sudo usermod -a -G $USER www-data
 
-BINDMOUNT="/host_project_user2/ /vhosts/$USER/public_html/ none defaults,bind 0 0"
-sudo grep -q -F "$BINDMOUNT" /etc/fstab || echo "$BINDMOUNT" >> /etc/fstab
-sudo mount -a
+
+# BINDMOUNT="/host_project_user2/ /vhosts/$USER/public_html/ none defaults,bind 0 0"
+# sudo grep -q -F "$BINDMOUNT" /etc/fstab || echo "$BINDMOUNT" >> /etc/fstab
+# sudo mount -a
 
 #=============================================================================================================
 # configure php
