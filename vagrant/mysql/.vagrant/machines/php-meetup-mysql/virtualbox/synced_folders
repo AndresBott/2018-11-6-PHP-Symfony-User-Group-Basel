@@ -1,1 +1,0 @@
-{"virtualbox":{"/host_project":{"guestpath":"/host_project","hostpath":"/media/odo/datos/sync/edit/programacion/www/projects/php-fpm-meetup/src","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/media/odo/datos/sync/edit/programacion/www/projects/php-fpm-meetup/vagrant/mysql","disabled":false,"__vagrantfile":true}}}
